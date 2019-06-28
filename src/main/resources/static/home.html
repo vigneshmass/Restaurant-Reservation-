@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bootstrap 4 Horizontal Form Layout</title>
+<link rel="stylesheet" href="home.css">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>  /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        function filterFunction() {
+          var input, filter, ul, li, a, i;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          div = document.getElementById("myDropdown");
+          a = div.getElementsByTagName("a");
+          for (i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              a[i].style.display = "";
+            } else {
+              a[i].style.display = "none";
+            }
+          }
+        }
+</script>
+<style>
+    
+</style>
+</head>
+<body >
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+                <div class="container">
+                    <a href="#" class="navbar-brand mr-3"><h2><b><i>TECHIE</i></b></h2></a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav">
+                            <a href="#" class="nav-item nav-link active">Home</a>
+                            <a href="#" class="nav-item nav-link" onclick="location.href='bookingtable.html';">Food details</a>
+                            <a href="#" class="nav-item nav-link" onclick="location.href='Order.html';">Order Online</a>
+                            <a href="#" class="nav-item nav-link">Review</a>
+                        </div>
+                        <div class="navbar-nav ml-auto">
+                        
+                             <a href="#" class="nav-item nav-link">  <form class="form-inline">
+                        
+                                        <a href="#" class="nav-item nav-link"  onclick="location.href='1.html';"><h1><b><i class="fa fa-user-circle icon"></i></b></h1> </a>
+                                        
+                                        <a href="#" class="nav-item nav-link"  onclick="location.href='cart.html';"><h1><b><i class="fa fa-shopping-cart icon"></i></b></h1> </a>
+
+                                      </div>
+                                </div>
+                            </form></a>
+                           
+                        </div>
+                    </div>
+                </div>    
+</nav>
+<div class="container">
+    <!--Row with three equal columns-->
+    <div class="row">
+        <div class="col-lg-5">     </div>
+        <div class="col-lg-4">    
+                <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn"><b><i class="fa fa-search"></i>  Select Location</b></button>
+                        <div id="myDropdown" class="dropdown-content">
+                          <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                          <a href="#about"  onclick="location.href='chennai.html';">Chennai</a>
+                          <a href="#base">coimbatore</a>
+                          <a href="#blog">thiruvannamalai</a>
+                          <a href="#contact">thirunalveli</a>
+                          <a href="#custom">thiruchi</a>
+                          <a href="#support">velur</a>
+                          <a href="#tools">mathurai</a>
+                        </div>
+                      </div>         </div>
+        <div class="col-lg-3"></div>
+    </div>
+
+
+</div>
+
+</body>
+</html>    
+
+
+
+
+
+s

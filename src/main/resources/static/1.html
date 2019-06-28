@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bootstrap 4 Horizontal Form Layout</title>
+<link rel="stylesheet" href="index.css">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+    
+</style>
+</head>
+<body onload="initial()">
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+                <div class="container">
+                    <a href="#" class="navbar-brand mr-3"><h2><b><i>TECHIE</i></b></h2></a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav">
+                            <a href="#" class="nav-item nav-link active"><b>Profile</b></a>
+                            <a href="#" class="nav-item nav-link " onclick="location.href='home.html';">Home</a>
+                           
+                        </div>
+                        <a href="#" class="nav-item nav-link"  onclick="location.href='index.html';"> <b>Log Out</b></a>
+
+                              
+                            </form></a>
+                           
+                        </div>
+                    </div>
+                </div>    
+</nav>
+
+<div class="container">
+        <!--Row with three equal columns-->
+        <div class="row">
+            <div class="col-lg-3"><img src ="0_200.png"></div>
+            <div class="col-lg-7"> <div class="row">
+                    <div class="col">
+                            <div class="form-group row">
+                                <label for="inputname" class="col-sm-2 col-form-label">
+                                    <h5 style="color:black; "><b>Name</b> </h5>
+                                </label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="inputName" placeholder="CustomerName">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputnumber" class="col-sm-2 col-form-label">
+                                    <h5 style="color:black; "><b>Phone </b> </h5>
+                                </label>
+                                <div class="col-sm-5">
+                                    <input type="number" class="form-control" id="inputPhone"
+                                        placeholder="phone number">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputaddress" class="col-sm-2 col-form-label">
+                                    <h5 style="color:black; "><b>Address</b> </h5>
+                                </label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="inputAddress"
+                                        placeholder="CustomerAddress">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputpin" class="col-sm-2 col-form-label">
+                                    <h5 style="color:black; "><b>Pin Code</b> </h5>
+                                </label>
+                                <div class="col-sm-5">
+                                    <input type="number" class="form-control" id="inputNumber" placeholder="Pin Code">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="inputEmail" class="col-sm-2 col-form-label">
+                                    <h5 style="color:black; "><b>Email</b> </h5>
+                                </label>
+                                <div class="col-sm-5">
+                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-2 col-form-label">
+                                    <h5 style="color:black; "><b>Password</b> </h5>
+                                </label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="inputPassword"placeholder="Password">
+                                </div>
+                            </div>
+                         
+                            <div class="form-group row">
+                                <div class="col-sm-10 offset-sm-2">
+                                    <button type="button" class="btn btn-primary"  onclick="handleClick()">Update</button>
+                                </div>
+                            </div>
+                            <div class="col"> </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+ </div> 
+ 
+ 
+ <script type="text/javascript">
+    function putData(url = '', data = {}) {
+        console.log('We are here');
+        // Default options are marked with *
+        return fetch(url, {
+            method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, cors, *same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: {
+                'Content-Type': 'application/json',
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            redirect: 'follow', // manual, *follow, error
+            referrer: 'no-referrer', // no-referrer, *client
+            body: JSON.stringify(data), // body data type must match "Content-Type" header
+        })
+            .then(response => response.json()); // parses JSON response into native Javascript objects 
+    }
+
+    function handleClick() {
+        console.log('Hi');
+        var cid = getCookie("id");
+        const name = document.getElementById('inputName').value;
+        const email = document.getElementById('inputEmail').value;
+        const phone = document.getElementById('inputPhone').value;
+        const address = document.getElementById('inputAddress').value;
+        const pin = document.getElementById('inputNumber').value;
+        const password = document.getElementById('inputPassword').value;
+
+    document.cookie = "id="+cid+";path=/";
+    document.cookie="userName="+name+";path=/";
+    document.cookie="mailid="+email+";path=/";
+
+    document.cookie = "pass="+password+";path=/";
+    document.cookie="phone="+phone+";path=/";
+    document.cookie="address="+address+";path=/";
+    document.cookie="pin="+pin+";path=/";
+
+        
+        const Data = {
+            url: 'http://localhost:8080/api/customers',
+            data: { 
+                'customerId': cid,
+                'customerName': name, 
+                'customerPassword': password, 
+                'customerPhoneno': phone, 
+                'customerEmail': email, 
+                'customerAddress': address, 
+                'customerPin': pin 
+            }
+        };
+        putData(Data.url, Data.data)
+            .then(data => console.log(JSON.stringify(data)))
+            .catch(error => console.error(error));
+            alert("profile edit  is Successfull");
+    }
+
+
+
+
+    function initial(){
+        var cid = getCookie("id");
+        var cname = getCookie("userName");
+        var cmail = getCookie("mailid");
+        var cpass = getCookie("pass");
+        var cphone = getCookie("phone");
+        var caddress = getCookie("address");
+        var cpin = getCookie("pin");
+
+
+      document.getElementById('inputName').defaultValue = cname;
+      document.getElementById('inputPhone').defaultValue =cphone;
+      document.getElementById('inputAddress').defaultValue =caddress;
+      document.getElementById('inputPassword').defaultValue =cpass;
+      document.getElementById('inputNumber').defaultValue =cpin;
+      document.getElementById('inputEmail').defaultValue = cmail;
+     
+
+
+    }
+
+
+//-------------------------------------------------------------------------------------------
+
+function getdata(email){
+
+const url='http://localhost:8080/api/customers/email/get';
+const data= {
+    'customerEmail':email
+};
+console.log(''+JSON.stringify(data));
+fetch(url,{
+    method: 'POST',
+    headers: {
+        'Content-Type':'application/json',
+    },
+    body: JSON.stringify(data),
+})
+    .then(response => response.json())
+.then(data=>{
+
+
+
+
+document.cookie = "id="+data.customerId+";path=/";
+document.cookie="userName="+data.customerName+";path=/";
+document.cookie="mailid="+data.customerEmail+";path=/";
+
+window.location="home.html";
+})
+.catch(error=>console.error(error));
+
+}
+
+ function getCookie(cname) {
+                    var name = cname + "=";
+                    var decodedCookie = decodeURIComponent(document.cookie);
+                    var ca = decodedCookie.split(';');
+                    for(var i = 0; i < ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' ') {
+                            c = c.substring(1);
+                        }
+                        if (c.indexOf(name) == 0) {
+                            return c.substring(name.length, c.length);
+                        }
+                    }
+                    return "";
+                }
+
+
+
+</script>
+
+
+
+
+</body>
+</html>                            

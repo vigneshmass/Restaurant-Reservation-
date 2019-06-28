@@ -1,0 +1,219 @@
+.button
+{
+  border:60px;
+  padding:80px 70px;
+  background-image:url(stanhope-hotel-brighton-restaurant-11.jpg);
+  background-size:cover;
+  color:white;
+  width: 20%;
+  top:-5.5%;
+  text-align: top;
+  font-size: 180%;
+  font-family:regular;
+  margin-top:50px;
+  border:none;
+  outline:none;
+  margin-left:40px;
+  color:black;
+  transition:3s;
+  border-radius:px;
+}
+.button:hover{
+    background-image:url();
+    transition: 2s;
+}
+.table{
+
+    font-family:;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    color: rgb(30, 90, 90);
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #afb1af;
+  }
+  .button1
+{
+  border:60px;
+  padding:80px 70px;
+  background-image:url(001.jpg);
+  background-size:cover;
+  color:white;
+  width: 20%;
+  top:-5.5%;
+  text-align: top;
+  font-size: 180%;
+  font-family:regular;
+  margin-top:50px;
+  border:none;
+  outline:none;
+  margin-left:40px;
+  color:black;
+  transition:3s;
+  border-radius:px;
+}
+.button1:hover{
+    background-image:url();
+    transition: 2s;
+}
+.button2
+{
+  border:60px;
+  padding:80px 70px;
+  background-image:url(289626.jpg);
+  background-size:cover;
+  color:white;
+  top:-5.5%;
+  text-align: top;
+  font-size: 180%;
+  font-family: regular;
+  margin-top:50px;
+  border:none;
+  width:20%;
+  outline:none;
+  margin-left:40px;
+  color:black;
+  transition:3s;
+  border-radius:px;
+}
+.button2:hover{
+    background-image:url();
+    transition: 2s;
+}
+.button3
+{
+  border:60px;
+  padding:80px 70px;
+  background-image:url(csm_restaurant-img-02_d666f4932c.jpg);
+  background-size:cover;
+  color:white;
+  top:-5.5%;
+  text-align: top;
+  font-size: 180%;
+  font-family: regular;
+  margin-top:50px;
+  border:none;
+  width:20%;
+  outline:none;
+  margin-left:40px;
+  color:black;
+  transition:3s;
+  border-radius:px;
+}
+.button3:hover{
+    background-image:url();
+    transition: 2s;
+}
+.button4
+{
+  border:60px;
+  padding:80px 70px;
+  background-image:url(images.jpg);
+  background-size:cover;
+  color:white;
+  top:-5.5%;
+  text-align: top;
+  font-size: 180%;
+  font-family: regular;
+  margin-top:50px;
+  width:20%;
+  border:none;
+  outline:none;
+  margin-left:40px;
+  color:black;
+  transition:3s;
+  border-radius:px;
+}
+.button4:hover{
+    background-image:url();
+    transition: 2s;
+}
+.button5
+{
+  border:60px;
+  padding:80px 70px;
+  background-image:url(Sands-Restaurant.jpg);
+  background-size:cover;
+  color:white;
+  top:-5.5%;
+  text-align: top;
+  font-size: 180%;
+  font-family: regular;
+  margin-top:50px;
+  border:none;
+  outline:none;
+  width:20%;
+  margin-left:40px;
+  color:black;
+  transition:3s;
+  border-radius:px;
+}
+.button5:hover{
+    background-image:url();
+    transition: 2s;
+}
+.button6
+{
+  border:60px;
+  padding:80px 70px;
+  background-image:url(Toronto-restaurant-Sara-entertainment-district-OD_KCHN0554-HERO-SHOT.jpg);
+  background-size:cover;
+  color:white;
+  top:-5.5%;
+  text-align: top;
+  font-size: 180%;
+  font-family: regular;
+  margin-top:50px;
+  width:20%;
+  border:none;
+  outline:none;
+  margin-left:40px;
+  color:black;
+  transition:3s;
+  border-radius:px;
+}
+.button6:hover{
+    background-image:url();
+    transition: 2s;
+}
+.button7
+{
+  border:60px;
+  padding:80px 70px;
+  background-image:url(31444674_BINARY_GI20180522_GONCALO_VILLAVERDE_0137_resultado.jpg);
+  background-size:cover;
+  color:white;
+  top:-5.5%;
+  text-align: top;
+  font-size: 180%;
+  font-family: regular;
+  margin-top:50px;
+  border:none;
+  width:20%;
+  outline:none;
+  margin-left:40px;
+  color:black;
+  transition:3s;
+  border-radius:px;
+}
+.button7:hover{
+    background-image:url();
+    transition: 2s;
+}
+
+.table{
+
+  font-family:;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+  
+  

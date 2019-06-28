@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap 4 Horizontal Form Layout</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+
+
+
+
+    </style>
+</head>
+<body background="Toronto-restaurant-Sara-entertainment-district-OD_KCHN0554-HERO-SHOT.jpg"  >
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+    <div class="container">
+        <a href="#" class="navbar-brand mr-3"><h2>TECHIE</h2></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link " onclick="location.href='index.html';">Home</a>
+                <a href="#" class="nav-item nav-link "></a>
+                <a href="#" class="nav-item nav-link"></a>
+                <a href="#" class="nav-item nav-link"></a>
+            </div>
+            <div class="navbar-nav ml-auto">
+
+                <a href="#" class="nav-item nav-link " onclick="location.href='sign in.html';">Sign up</a>
+                <a href="#" class="nav-item nav-link  active">Log in</a>
+
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <!--Row with two equal columns-->
+    <div class="row">
+        <div class="col"> <div class="row">
+            <div class="col"><form>
+
+                <div class="form-group row">
+                    <label for="inputEmail" class="col-sm-3 col-form-label"><h5 style="color:black; "><b>Email</b> </h5></label>
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-3 col-form-label"><h5 style="color:black; "><b>Password</b> </h5></label>
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-2">
+                        <label class="form-check-label"><input type="checkbox"> Remember me</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-2">
+                        <button type="button" class="btn btn-primary" onclick="loginClick()">Log in </button>
+                    </div>
+                </div></div>
+            <div class="col">    </div>
+
+        </div>
+            <script type="text/javascript">
+
+
+                function postData(url = '', data = {}) {
+                    console.log('We are here');
+                    // Default options are marked with *
+                    return fetch(url, {
+                        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                        mode: 'cors', // no-cors, cors, *same-origin
+                        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                        credentials: 'same-origin', // include, *same-origin, omit
+                        headers: {
+                            'Content-Type': 'application/json',
+                            // 'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        redirect: 'follow', // manual, *follow, error
+                        referrer: 'no-referrer', // no-referrer, *client
+                        body: JSON.stringify(data), // body data type must match "Content-Type" header
+                    })
+                        .then(response => response.json()); // parses JSON response into native Javascript objects
+                }
+
+                /* function handleClick() {
+                    console.log('Hi');
+
+                    const email = document.getElementById('inputEmail').value;
+                    const password = document.getElementById('inputPassword').value;
+
+                    const Data = {
+                        url: 'http://localhost:8080/api/customers',
+                        data: {
+
+                            'customerPassword': password,
+                            'customerEmail': email
+                        }
+                    };
+                    postData(Data.url, Data.data)
+                        .then(data =>{
+                            if((JSON.stringify(data))=="true"){
+
+                                alert(Login Successfull);
+                                window.location(home.html);
+                            }
+
+                                alert(Invalid credentials);
+                        })
+                        .catch(error => console.error(error));
+                }  */
+
+
+                function loginClick(){
+                    console.log('entered into click');
+                    const email=document.getElementById('inputEmail').value;
+                    const password=document.getElementById('inputPassword').value;
+
+
+                    const url='http://localhost:8080/api/customers/login';
+                    const data= {
+                        'customerEmail':email,
+                        'customerPassword':password
+                    };
+                    console.log(''+JSON.stringify(data));
+                    fetch(url,{
+                        method: 'POST',
+                        headers: {
+                            'Content-Type':'application/json',
+                        },
+                        body: JSON.stringify(data),
+                    })
+
+                        .then(response => response.json())
+
+
+
+                .then(data=>{
+                        if(data== true)
+                    {
+                        console.log("login successful");
+                        getdata(email);
+                    }
+                    if (data== false) {
+                        alert("bad login credentials");
+
+                    }
+
+                })
+                .catch(error=>console.error(error));
+                }
+
+
+
+
+                function getdata(email){
+
+                    const url='http://localhost:8080/api/customers/email/get';
+                    const data= {
+                        'customerEmail':email
+                    };
+                    console.log(''+JSON.stringify(data));
+                    fetch(url,{
+                        method: 'POST',
+                        headers: {
+                            'Content-Type':'application/json',
+                        },
+                        body: JSON.stringify(data),
+                    })
+                        .then(response => response.json())
+                .then(data=>{
+
+
+                   // alert("cookie");
+
+                    document.cookie = "id="+data.customerId+";path=/";
+                    document.cookie="userName="+data.customerName+";path=/";
+                    document.cookie="mailid="+data.customerEmail+";path=/";
+
+                    document.cookie = "pass="+data.customerPassword+";path=/";
+                    document.cookie="phone="+data.customerPhone+";path=/";
+                    document.cookie="address="+data.customerAddress+";path=/";
+                    document.cookie="pin="+data.customerPin+";path=/";
+                    
+                    window.location="home.html";
+                })
+                .catch(error=>console.error(error));
+
+                }
+
+
+
+
+
+
+
+                function findCookie(){
+                    var username = getCookie("id");
+                    if (username != "") {
+                        window.location="home.html";
+                    }
+                }
+
+
+                function getCookie(cname) {
+                    var name = cname + "=";
+                    var decodedCookie = decodeURIComponent(document.cookie);
+                    var ca = decodedCookie.split(';');
+                    for(var i = 0; i < ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' ') {
+                            c = c.substring(1);
+                        }
+                        if (c.indexOf(name) == 0) {
+                            return c.substring(name.length, c.length);
+                        }
+                    }
+                    return "";
+                }
+
+            </script>
+
+
+
+
+
+
+
+
+</body>
+</html>                            

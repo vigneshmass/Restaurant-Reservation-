@@ -1,0 +1,19 @@
+
+spring:
+  datasource:
+    url: jdbc:h2:file:~/restaurant3
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.H2Dialect
+  jackson:
+    serialization:
+      indent_output: true
+  h2:
+    console:
+      enabled: true
+      path: /h2

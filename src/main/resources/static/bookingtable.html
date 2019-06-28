@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bootstrap 4 Horizontal Form Layout</title>
+<link rel="stylesheet" href="bookingtable.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+
+ 
+        
+
+  </style>
+</head>
+<body  >
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+                <div class="container">
+                    <a href="#" class="navbar-brand mr-3"><h2><b><i>TECHIE</i></b></h2></a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav">
+                            <a href="#" class="nav-item nav-link " onclick="location.href='home.html';">Home</a>
+                            <a href="#" class="nav-item nav-link active" >Food Details</a>
+                            <a href="#" class="nav-item nav-link" onclick="location.href='Order.html';">Order Online</a>
+                            <a href="#" class="nav-item nav-link"  onclick="location.href='pay.html';">Payment</a>
+                        </div>
+                        <div class="navbar-nav ml-auto">
+                        
+                             <a href="#" class="nav-item nav-link">  <form class="form-inline">
+                        
+                                        
+                              <a href="#" class="nav-item nav-link"  onclick="location.href='cart.html';"><h1><b><i class="fa fa-shopping-cart icon"></i></b></h1> </a>
+                              <a href="#" class="nav-item nav-link" onclick="location.href='1.html';"><b><i class="fa fa-user-circle icon"></i></b></a>
+
+                                      </div>
+                                </div>
+                            </form></a>
+                           
+                        </div>
+                    </div>
+                </div>    
+</nav>
+
+
+<div class="container">
+        <div class="row">
+                <div class="col-lg-4">
+                        <div id='hotels'></div>
+
+                        <script type="text/javascript">
+        
+                            function loadPosts(id) {
+                              console.log("hi");
+                        fetch(`http://localhost:8080/api/menu/${id}`)
+                        .then((res) => res.json()).then(h => {
+                            let output = '';
+                           // hotel.map(h => {
+                                output += `
+                                    <h1>${h.menuItems}</h1>
+                                    
+                                    <style>
+                                    body{
+                                        background-color:rgb(250, 229, 108);;
+                                        background-size:100%;
+
+                                    }
+                                    </style>
+                                   <body>
+                                    <table style="border-collapse:collapse;font-family: normal;width:100%;">
+                                      <tr>
+                                        <th>Start Time</th>
+                                        <th>End Time</th>
+                                       
+                                          </tr>
+                                       <tr>
+                                        <td>${h.startTime}</td>
+                                        <td>${h.endTime}</td>
+                                       
+                                          </tr>
+                                        </table>
+                                        </body>
+                    
+                                `;
+                                console.log(h.hotelName);
+                            
+                            document.getElementById('hotels').innerHTML = output;
+                            // window.location.href = "http://www.w3schools.com";
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                    }
+                    </script>
+                    
+                                    
+
+
+                </div>
+                <div class="col-lg-4">
+                   
+
+                    <div id='hotels'></div>
+
+                        <script type="text/javascript">
+        
+                            function loadPost(id) {
+                              console.log("hi");
+                        fetch(`http://localhost:8080/api/rest/${id}`)
+                        .then((res) => res.json()).then(h => {
+                            let output = '';
+                           // hotel.map(h => {
+                                output += `
+                                    <h1>${h.restName}</h1>
+                                    
+                                    <style>
+                                    body{
+                                        background-color:rgb(250, 229, 108);;
+                                        background-size:100%;
+
+                                    }
+                                    </style>
+                                   <body>
+                                    <table style="border-collapse:collapse;font-family: normal;width:100%;">
+                                      <tr>
+                                        <th>RestaurantType</th>
+                                        <th>RestaturantRegion</th>
+                                       
+                                          </tr>
+                                       <tr>
+                                        <td><b>${h.restType}</b></td>
+                                        <td><b>${h.restRegion}</b></td>
+                                       
+                                          </tr>
+                                        </table>
+                                        <img src=" ${h.restimg}" width=100%  height=80%>
+                                        </body>
+                    
+                                `;
+                                console.log(h.hotelName);
+                            
+                            document.getElementById('hotels').innerHTML = output;
+                            // window.location.href = "http://www.w3schools.com";
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                    }
+                    </script>
+                    <ul>
+                   
+                            <li><a><b>Restaurant</b></a>
+                               <ul>
+                              <li class ="dropdown">
+                                 <a   onclick="loadPost(1)">Saravanabhavan</a>
+                                 <a onclick="loadPost(2)">Uthayambhavan</a>
+                                 <a onclick="loadPost(3)">	Dakshin</a>
+                                 <a onclick="loadPost(4)">Royal Veg</a>
+                               
+                              </li>
+                              </ul>
+                   
+
+
+
+
+
+                </div>
+                <div class="col-lg-4">      
+                        <ul>
+                   
+                        <li><a><b>Food Menu</b></a>
+                           <ul>
+                          <li class ="dropdown">
+                             <a   onclick="loadPosts(1)">idly</a>
+                             <a onclick="loadPosts(1)">dhosaai</a>
+                             <a onclick="loadPosts(1)">	poori</a>
+                             <a onclick="loadPosts(1)">sapathi</a>
+                            <a onclick="loadPosts(2)">Briyani</a>
+                             <a onclick="loadPosts(2)">	meals</a>
+                             <a onclick="loadPosts(2)">	sapathi</a>
+                             <a onclick="loadPosts(2)">	rice</a>
+                             <a onclick="loadPosts(3)">	sapathi</a>
+                             <a onclick="loadPosts(3)">parotta</a>
+                             <a onclick="loadPosts(3)">	meals</a>
+                          </li>
+                          </ul></div>
+            </div>
+
+            
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    
+
+  
+ 
+</body>
+
+</html>                            

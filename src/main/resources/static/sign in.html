@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap 4 Horizontal Form Layout</title>
+    <link rel="stylesheet" href="sign in.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <style>
+
+    </style>
+
+</head>
+
+<body background="restaurante-varanda-de-lisboa--v15969937-w902 (1).jpg">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+    <div class="container">
+        <a href="#" class="navbar-brand mr-3">
+            <h2>TECHIE</h2>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link " onclick="location.href='index.html';">Home</a>
+                <a href="#" class="nav-item nav-link "></a>
+                <a href="#" class="nav-item nav-link"></a>
+                <a href="#" class="nav-item nav-link"></a>
+            </div>
+            <div class="navbar-nav ml-auto">
+
+                <a href="#" class="nav-item nav-link active">Sign up</a>
+                <a href="#" class="nav-item nav-link " onclick="location.href='login.html';">Log in</a>
+
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <!--Row with two equal columns-->
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group row">
+                        <label for="inputname" class="col-sm-2 col-form-label">
+                            <h5 style="color:black; "><b>Name</b> </h5>
+                        </label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" id="inputName" onkeyup="checkregname()" placeholder="CustomerName">
+                            <p class="text-danger" id="alertregname" ></p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputnumber" class="col-sm-2 col-form-label" >
+                            <h5 style="color:black; "><b>Phone </b> </h5>
+                        </label>
+                        <div class="col-sm-5">
+                            <input type="number" class="form-control" id="inputPhone"
+                                   placeholder="phone number" onkeyup="checkregphone()">
+                                   <p class="text-danger" id="alertregphone" ></p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputaddress" class="col-sm-2 col-form-label">
+                            <h5 style="color:black; "><b>Address</b> </h5>
+                        </label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" id="inputAddress"
+                                   placeholder="CustomerAddress">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputpin" class="col-sm-2 col-form-label">
+                            <h5 style="color:black; "><b>Pin Code</b> </h5>
+                        </label>
+                        <div class="col-sm-5">
+                            <input type="number" class="form-control" id="inputNumber" placeholder="Pin Code">
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-2 col-form-label">
+                            <h5 style="color:black; "><b>Email</b> </h5>
+                        </label>
+                        <div class="col-sm-5">
+                            <input type="email" class="form-control" id="inputEmail"  placeholder="Email" onkeyup="checkregmail()">
+                            <p class="text-danger" id="alertregmail" ></p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">
+                            <h5 style="color:black; "><b>Password</b> </h5>
+                        </label>
+                        <div class="col-sm-5">
+                            <input type="password" onkeyup="checkregpass()" class="form-control" onkeyup="checkregpass()" id="inputPassword"placeholder="Password">
+                            <p class="text-danger" id="alertregpass" ></p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10 offset-sm-2">
+                            <label class="form-check-label"><input type="checkbox"> Remember me</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10 offset-sm-2">
+                            <button type="submit" id="sign" class="btn btn-primary" onclick="handleClick()">Sign up</button>
+                        </div>
+                    </div>
+                    <div class="col"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function postData(url = '', data = {}) {
+        console.log('We are here');
+        // Default options are marked with *
+        return fetch(url, {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, cors, *same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: {
+                'Content-Type': 'application/json',
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            redirect: 'follow', // manual, *follow, error
+            referrer: 'no-referrer', // no-referrer, *client
+            body: JSON.stringify(data), // body data type must match "Content-Type" header
+        })
+            .then(response => response.json()); // parses JSON response into native Javascript objects
+    }
+
+    function handleClick() {
+        console.log('Hi');
+        const name = document.getElementById('inputName').value;
+        const email = document.getElementById('inputEmail').value;
+        const phone = document.getElementById('inputPhone').value;
+        const address = document.getElementById('inputAddress').value;
+        const pin = document.getElementById('inputNumber').value;
+        const password = document.getElementById('inputPassword').value;
+
+        const Data = {
+            url: 'http://localhost:8080/api/customers',
+            data: {
+                'customerName': name,
+                'customerPassword': password,
+                'customerPhoneno': phone,
+                'customerEmail': email,
+                'customerAddress': address,
+                'customerPin': pin
+            }
+        };
+
+
+        postData(Data.url, Data.data)
+            .then(data => console.log(JSON.stringify(data)))
+    .catch(error => console.error(error));
+        alert("Successfully created account");
+        window.location="login.html";
+    }
+
+    function checkregmail(){
+        console.log("entered into check mail");
+        var decimal=  /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        const element=document.getElementById('inputEmail');
+        const email=element.value;
+        if(email.match(decimal)){
+            console.log("match");
+            document.getElementById('alertregmail').innerHTML=``;
+            document.getElementById('sign').disabled = false;
+        }
+        else{
+            console.log("notmatch");
+            document.getElementById('alertregmail').innerHTML=`enter valid email`;
+            document.getElementById('sign').disabled = true;
+        }
+    }
+    function checkregname(){
+    console.log("entered into check name");
+    var decimal=  /^[a-z0-9_-]{3,15}$/;
+    const element=document.getElementById('inputName');
+    const email=element.value;
+    if(email.match(decimal)){
+        console.log("match");
+        document.getElementById('alertregname').innerHTML=``;
+        document.getElementById('sign').disabled = false;
+    }
+    else{
+        console.log("notmatch");
+        document.getElementById('alertregname').innerHTML=`Username must be lowercase and have atleast 5 letters`;
+        document.getElementById('sign').disabled = true;
+    }
+}
+
+function checkregphone(){
+    console.log("entered into check name");
+    var decimal=  /^[2-9]{2}[0-9]{8}$/;
+    const element=document.getElementById('inputPhone');
+    const email=element.value;
+    if(email.match(decimal)){
+        console.log("match");
+        document.getElementById('alertregphone').innerHTML=``;
+        document.getElementById('sign').disabled = false;
+    }
+    else{
+        console.log("notmatch");
+        document.getElementById('alertregphone').innerHTML=`10 digit mobile number need to be entered`;
+        document.getElementById('sign').disabled = true;
+    }
+}
+
+function checkregpass(){
+    console.log("entered into check name");
+    var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+    const element=document.getElementById('inputPassword');
+    const email=element.value;
+    if(email.match(decimal)){
+        console.log("match");
+        document.getElementById('alertregpass').innerHTML=``;
+        document.getElementById('sign').disabled = false;
+    }
+    else{
+        console.log("notmatch");
+        document.getElementById('alertregpass').innerHTML=`Password must have one uppercase, one number and one special character`;
+        document.getElementById('sign').disabled = true;
+    }
+}
+
+
+</script>
+
+
+</body>
+
+</html>

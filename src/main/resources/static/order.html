@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bootstrap 4 Horizontal Form Layout</title>
+<link rel="stylesheet" href="order.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+     ::placeholder {
+              color:black;
+              opacity: 1; /* Firefox */
+            }
+            
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+             color:black;
+            }
+            
+            ::-ms-input-placeholder { /* Microsoft Edge */
+             color:black;
+            }
+
+ 
+        
+
+  </style>
+</head>
+<body   >
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+                <div class="container">
+                    <a href="#" class="navbar-brand mr-3"><h2><b><i>TECHIE</i></b></h2></a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav">
+                            <a href="#" class="nav-item nav-link " onclick="location.href='home.html';">Home</a>
+                            <a href="#" class="nav-item nav-link " onclick="location.href='bookingtable.html';">Book a Table</a>
+                            <a href="#" class="nav-item nav-link  active">Order Online</a>
+                            <a href="#" class="nav-item nav-link"  onclick="location.href='pay.html';">Payment</a>
+
+                        </div>
+                        <div class="navbar-nav ml-auto">
+                        
+                             <a href="#" class="nav-item nav-link">  <form class="form-inline">
+                        
+                                        
+                                <a href="#" class="nav-item nav-link"  onclick="location.href='cart.html';"><h1><b><i class="fa fa-shopping-cart icon"></i></b></h1> </a>
+                                <a href="#" class="nav-item nav-link" onclick="location.href='1.html';"><b><i class="fa fa-user-circle icon"></i></b></a>
+                                        
+                                      </div>
+                                </div>
+                            </form></a>
+                           
+                        </div>
+                    </div>
+                </div>    
+</nav>
+
+<div class="container">
+        <!--Row with two equal columns-->
+        <div class="row">
+            <div class="col-md-6">
+                <!--new row-->
+
+                <div style="width:100%;height:100%;border:1px solid #110e0e;">
+                        <h3 align="center" style="margin: 30px; color: rgb(14, 15, 14)">Oredr Details</h3>
+                    <div class="container mt-3">
+                        <div class="row">
+                                <div class="col-md-6" style="position: relative;">
+                                    <div class="details">
+                                    <h5 align="left" style="color: rgb(19, 20, 18)">Customer name:</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" style="position: relative;">
+                                    <div class="details">
+                                    <h5 align="left" style="word-wrap: break-word; color: rgb(34, 20, 20)" id="cname" ></h5>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="container mt-3">
+                            <div class="row">
+                                    <div class="col-md-6" style="position: relative;">
+                                        <div class="details">
+                                        <h5 align="left" style="color: rgb(27, 12, 12)">Restaurant name:</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="position: relative;">
+                                        <div class="details">
+                                        <h5 align="left" style="word-wrap: break-word; color: rgba(21, 22, 20, 0.719)" id="resname" ></h5>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="container mt-3">
+                                <div class="row">
+                                        <div class="col-md-6" style="position: relative;">
+                                            <div class="details">
+                                            <h5 align="left" style="color: rgb(22, 14, 14)">Food names:</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" style="position: relative;">
+                                            <div class="details">
+                                            <h5 align="left" style="word-wrap: break-word; color: rgb(23, 26, 22)" id="foodname" ></h5>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="container mt-3">
+                                    <div class="row">
+                                            <div class="col-md-6" style="position: relative;">
+                                                <div class="details">
+                                                <h5 align="left" style="color: rgb(12, 11, 11)">No of food:</h5>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6" style="position: relative;">
+                                                <div class="details">
+                                                <h5 align="left" style="word-wrap: break-word; color: rgb(13, 14, 13)" id="noname" ></h5>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+
+
+
+
+</div>
+
+
+
+                <!--new row-->
+            </div>
+            <div class="col-md-6"><div class="container">
+         
+                    <div class="card"> 
+                       <input type="text" placeholder="CustomerName" id="Name"><br>
+                     
+                       
+                       RestaurantName: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select class="style" id="rest">
+                            <option value="Saravanabhavan">Saravanabhavan</option>
+                            <option  value="Uthyambavan">Uthyambavan</option>
+                            <option value="Dakshan">Dakshan</option>
+                            <option value="Royal">Royal</option>
+                            <option value="Annamal">Annamal</option>
+                       
+                                  </select>
+                                   
+                                   
+                        
+                                  <br>
+          
+                              FoodType: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select class="style" id="food" >
+                                  <option value="VEG">VEG</option>
+                                  <option value="NON_VEG">NON_VEG</option>
+                                  <option value="CUISINE">CUISINE</option>
+                                  
+                                 
+                                  </select><br>
+          
+                         Time:&nbsp;&nbsp;<input type="time" name="Check-in-Date" class="style" id="time"><br>
+        
+                          <input type="text" placeholder="foods" id="ww"><br>
+                          <input type="text" placeholder="Number of foods" id="no"><br>
+                          <input type="button" onclick="handleClick()" class="button" value="Book"   id="button">
+          
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+          
+          
+          <input type="button" onclick="location.href='cart.html';" class="button1" value="Carts" id="button">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+          
+          
+         
+                      </div>
+            </div>      
+            </div>
+           </div>
+        </div>
+<script type="text/javascript">
+    function postData(url = '', data = {}) {
+        console.log('We are here');
+        // Default options are marked with *
+        return fetch(url, {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, cors, *same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: {
+                'Content-Type': 'application/json',
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            redirect: 'follow', // manual, *follow, error
+            referrer: 'no-referrer', // no-referrer, *client
+            body: JSON.stringify(data), // body data type must match "Content-Type" header
+        })
+            .then(response => response.json()); // parses JSON response into native Javascript objects 
+    }
+
+    function handleClick() {
+        console.log('Hi');
+        const name = document.getElementById('Name').value;
+        
+        var rest = document.getElementById('rest').value
+        //alert(rest);
+        const food = document.getElementById('food').value;
+       // alert(food);
+        const time = document.getElementById('time').value;
+        const ww = document.getElementById('ww').value;
+        const no = document.getElementById('no').value;
+        
+        const Data = {
+            url: 'http://localhost:8080/api/seat',
+            data: { 
+                'customerName': name, 
+                'restaurantName': rest, 
+                'foodType': food, 
+                'time': time, 
+                'foods': ww, 
+                'noFood':no 
+            }
+        };
+        postData(Data.url, Data.data)
+            .then(data =>{
+
+
+                document.getElementById('cname').innerHTML=`${data.customerName}`;
+                document.getElementById('resname').innerHTML=`${data.restaurantName}`;
+                document.getElementById('foodname').innerHTML=`${data.foodType}`;
+                document.getElementById('noname').innerHTML=`${data.noFood}`;
+
+
+               // alert(data.orderId);
+            })            
+            .catch(error => console.error(error));
+            alert("Booking Successfull");
+    }
+</script>
+
+  
+ 
+</body>
+
+</html>                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
